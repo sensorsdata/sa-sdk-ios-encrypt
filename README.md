@@ -1,6 +1,6 @@
 ![logo](https://opensource.sensorsdata.cn/wp-content/uploads/logo.png)
 <br><br>
-[![License](https://img.shields.io/github/license/sensorsdata/sa-sdk-ios-encrypt.svg)](https://github.com/sensorsdata/sa-sdk-ios-encrypt/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/sensorsdata/sa-sdk-ios-encrypt.svg)](https://github.com/sensorsdata/sa-sdk-ios-encrypt/blob/main/LICENSE)
 [![GitHub release](https://img.shields.io/github/tag/sensorsdata/sa-sdk-ios-encrypt.svg?label=release)](https://github.com/sensorsdata/sa-sdk-ios-encrypt/releases)
 [![GitHub release date](https://img.shields.io/github/release-date/sensorsdata/sa-sdk-ios-encrypt.svg)](https://github.com/sensorsdata/sa-sdk-ios-encrypt/releases)
 
