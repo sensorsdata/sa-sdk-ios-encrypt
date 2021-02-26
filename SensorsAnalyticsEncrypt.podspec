@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
     # -DCRYPTOPP_DISABLE_ASM=1 为了解决在模拟器上编译报错的问题
     # issue：https://github.com/weidai11/cryptopp/issues/933
     # CMake：https://www.cryptopp.com/wiki/CMake
-    f.pod_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'SENSORS_ANALYTICS_ENABLE_CUSTOM_CRYPTOPP=1', 'OTHER_CPLUSPLUSFLAGS[sdk=iphonesimulator*]' => '-DCRYPTOPP_DISABLE_ASM=1', 'GCC_WARN_INHIBIT_ALL_WARNINGS' => 'YES'}
+    f.pod_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'SENSORS_ANALYTICS_ENABLE_CUSTOM_CRYPTOPP=1', 'OTHER_CPLUSPLUSFLAGS[sdk=iphonesimulator*]' => '$(OTHER_CFLAGS) -DCRYPTOPP_DISABLE_ASM=1', 'GCC_WARN_INHIBIT_ALL_WARNINGS' => 'YES'}
   end
 
 end

@@ -1828,7 +1828,7 @@
 				);
 				"OTHER_CPLUSPLUSFLAGS[sdk=iphonesimulator*]" = (
 					"$(OTHER_CFLAGS)",
-					"-DCRYPTOPP_DISABLE_ASM",
+					"-DCRYPTOPP_DISABLE_ASM=1",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.sensorsdata.SensorsAnalyticsEncrypt;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1857,7 +1857,7 @@
 				);
 				"OTHER_CPLUSPLUSFLAGS[sdk=iphonesimulator*]" = (
 					"$(OTHER_CFLAGS)",
-					"-DCRYPTOPP_DISABLE_ASM",
+					"-DCRYPTOPP_DISABLE_ASM=1",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.sensorsdata.SensorsAnalyticsEncrypt;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
