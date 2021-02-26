@@ -17,6 +17,10 @@ SensorsAnalytics SDK 是国内第一家开源商用版用户行为采集 SDK，�
 
 iOS 8.0 及以上，Xcode 9.0 及以上。
 
+## 集成文档
+
+请参考神策官网 [iOS SDK 埋点数据的加密功能](https://manual.sensorsdata.cn/sa/latest/tech_sdk_client_ios_super-22253311.html#id-.SDKAPI(iOS)v1.13-埋点数据的加密功能)。
+
 
 ## 贡献
 
