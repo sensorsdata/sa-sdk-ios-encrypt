@@ -3,6 +3,8 @@
 [![License](https://img.shields.io/github/license/sensorsdata/sa-sdk-ios-encrypt.svg)](https://github.com/sensorsdata/sa-sdk-ios-encrypt/blob/main/LICENSE)
 [![GitHub release](https://img.shields.io/github/tag/sensorsdata/sa-sdk-ios-encrypt.svg?label=release)](https://github.com/sensorsdata/sa-sdk-ios-encrypt/releases)
 [![GitHub release date](https://img.shields.io/github/release-date/sensorsdata/sa-sdk-ios-encrypt.svg)](https://github.com/sensorsdata/sa-sdk-ios-encrypt/releases)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/SensorsAnalyticsEncrypt.svg)](https://img.shields.io/cocoapods/v/SensorsAnalyticsEncrypt.svg)
+[![Platform](https://img.shields.io/cocoapods/p/SensorsAnalyticsEncrypt.svg?style=flat)](http://cocoadocs.org/docsets/SensorsAnalyticsEncrypt)
 
 ## 神策简介
 

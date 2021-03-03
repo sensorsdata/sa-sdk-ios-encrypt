@@ -9,9 +9,16 @@ Pod::Spec.new do |s|
   s.platform = :ios, "8.0"
   s.source_files = "SensorsAnalyticsEncrypt/**/*.{h,mm,cpp}"
   s.public_header_files = "SensorsAnalyticsEncrypt/ECC/SACryptoppECC.h"
-  # -DCRYPTOPP_DISABLE_ASM=1 为了解决在模拟器上编译报错的问题
-  # issue：https://github.com/weidai11/cryptopp/issues/933
-  # CMake：https://www.cryptopp.com/wiki/CMake
-  s.pod_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'SENSORS_ANALYTICS_ENABLE_CUSTOM_CRYPTOPP=1', 'OTHER_CPLUSPLUSFLAGS[sdk=iphonesimulator*]' => '$(OTHER_CFLAGS) -DCRYPTOPP_DISABLE_ASM=1', 'GCC_WARN_INHIBIT_ALL_WARNINGS' => 'YES'}
+  s.libraries = "c++"
+  s.pod_target_xcconfig = { 
+    "GCC_PREPROCESSOR_DEFINITIONS" => "SENSORS_ANALYTICS_ENABLE_CUSTOM_CRYPTOPP=1", 
+    # -DCRYPTOPP_DISABLE_ASM=1 为了解决在模拟器上编译报错的问题
+    # issue：https://github.com/weidai11/cryptopp/issues/933
+    # CMake：https://www.cryptopp.com/wiki/CMake
+    "OTHER_CPLUSPLUSFLAGS[sdk=iphonesimulator*]" => "$(OTHER_CFLAGS) -DCRYPTOPP_DISABLE_ASM=1", 
+    "CLANG_CXX_LANGUAGE_STANDARD" => "gnu++14",
+    "CLANG_CXX_LIBRARY" => "libc++",
+    "GCC_WARN_INHIBIT_ALL_WARNINGS" => "YES"
+  }
 
 end
