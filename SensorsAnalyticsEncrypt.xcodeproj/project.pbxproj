@@ -392,7 +392,25 @@
 		A8D2638C25834AE100E06EB8 /* sa_naclite.h in Headers */ = {isa = PBXBuildFile; fileRef = A8D2620725834AE000E06EB8 /* sa_naclite.h */; };
 		A8D2638D25834AE100E06EB8 /* sa_config_asm.h in Headers */ = {isa = PBXBuildFile; fileRef = A8D2620825834AE000E06EB8 /* sa_config_asm.h */; };
 		A8D2638E25834AE100E06EB8 /* sa_safer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8D2620925834AE000E06EB8 /* sa_safer.cpp */; };
+		FC2B27E726B78E2200CE3DDF /* SASMEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2B27E326B78E2200CE3DDF /* SASMEncryptor.m */; };
+		FC2B27E926B78E2200CE3DDF /* SASMEncryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = FC2B27E526B78E2200CE3DDF /* SASMEncryptor.h */; };
+		FC2B27ED26B7D39C00CE3DDF /* SASMEncryptHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2B27EB26B7D39C00CE3DDF /* SASMEncryptHelper.m */; };
+		FC2B27EE26B7D39C00CE3DDF /* SASMEncryptHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = FC2B27EC26B7D39C00CE3DDF /* SASMEncryptHelper.h */; };
+		FC2B27F026B7D3C500CE3DDF /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2B27EF26B7D3C500CE3DDF /* openssl.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FCE2422826A6B60100B1722E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A8031F432585F2D500166451 /* SACryptoppECC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SACryptoppECC.mm; sourceTree = "<group>"; };
@@ -781,6 +799,11 @@
 		A8D2620725834AE000E06EB8 /* sa_naclite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sa_naclite.h; sourceTree = "<group>"; };
 		A8D2620825834AE000E06EB8 /* sa_config_asm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sa_config_asm.h; sourceTree = "<group>"; };
 		A8D2620925834AE000E06EB8 /* sa_safer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sa_safer.cpp; sourceTree = "<group>"; };
+		FC2B27E326B78E2200CE3DDF /* SASMEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASMEncryptor.m; sourceTree = "<group>"; };
+		FC2B27E526B78E2200CE3DDF /* SASMEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASMEncryptor.h; sourceTree = "<group>"; };
+		FC2B27EB26B7D39C00CE3DDF /* SASMEncryptHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASMEncryptHelper.m; sourceTree = "<group>"; };
+		FC2B27EC26B7D39C00CE3DDF /* SASMEncryptHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASMEncryptHelper.h; sourceTree = "<group>"; };
+		FC2B27EF26B7D3C500CE3DDF /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = openssl.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -788,6 +811,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC2B27F026B7D3C500CE3DDF /* openssl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,6 +846,7 @@
 		A8D2607B2583491200E06EB8 /* SensorsAnalyticsEncrypt */ = {
 			isa = PBXGroup;
 			children = (
+				FC2B27E226B78E2200CE3DDF /* SM */,
 				A8031F422585F2D500166451 /* ECC */,
 				A8D2608525834ADE00E06EB8 /* SACryptopp */,
 			);
@@ -1218,6 +1243,18 @@
 			path = SACryptopp;
 			sourceTree = "<group>";
 		};
+		FC2B27E226B78E2200CE3DDF /* SM */ = {
+			isa = PBXGroup;
+			children = (
+				FC2B27EF26B7D3C500CE3DDF /* openssl.framework */,
+				FC2B27EC26B7D39C00CE3DDF /* SASMEncryptHelper.h */,
+				FC2B27EB26B7D39C00CE3DDF /* SASMEncryptHelper.m */,
+				FC2B27E526B78E2200CE3DDF /* SASMEncryptor.h */,
+				FC2B27E326B78E2200CE3DDF /* SASMEncryptor.m */,
+			);
+			path = SM;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1346,6 +1383,7 @@
 				A8D2628625834AE000E06EB8 /* sa_xtr.h in Headers */,
 				A8D262EC25834AE000E06EB8 /* sa_rsa.h in Headers */,
 				A8D2621025834AE000E06EB8 /* sa_dh2.h in Headers */,
+				FC2B27E926B78E2200CE3DDF /* SASMEncryptor.h in Headers */,
 				A8D262F425834AE000E06EB8 /* sa_gfpcrypt.h in Headers */,
 				A8D2625A25834AE000E06EB8 /* sa_adv_simd.h in Headers */,
 				A8D2630125834AE000E06EB8 /* sa_kalyna.h in Headers */,
@@ -1410,6 +1448,7 @@
 				A8D262CE25834AE000E06EB8 /* sa_siphash.h in Headers */,
 				A8D262A925834AE000E06EB8 /* sa_zdeflate.h in Headers */,
 				A8D2631425834AE000E06EB8 /* sa_esign.h in Headers */,
+				FC2B27EE26B7D39C00CE3DDF /* SASMEncryptHelper.h in Headers */,
 				A8D2633625834AE100E06EB8 /* sa_mdc.h in Headers */,
 				A8D2629D25834AE000E06EB8 /* sa_ec2n.h in Headers */,
 				A8D2622F25834AE000E06EB8 /* sa_rijndael.h in Headers */,
@@ -1427,6 +1466,7 @@
 				A8D260752583491200E06EB8 /* Sources */,
 				A8D260762583491200E06EB8 /* Frameworks */,
 				A8D260772583491200E06EB8 /* Resources */,
+				FCE2422826A6B60100B1722E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1492,6 +1532,7 @@
 				A8D262E125834AE000E06EB8 /* sa_rc6.cpp in Sources */,
 				A8D2627E25834AE000E06EB8 /* sa_chacha.cpp in Sources */,
 				A8D2637925834AE100E06EB8 /* sa_ida.cpp in Sources */,
+				FC2B27ED26B7D39C00CE3DDF /* SASMEncryptHelper.m in Sources */,
 				A8D262CC25834AE000E06EB8 /* sa_elgamal.cpp in Sources */,
 				A8D2623425834AE000E06EB8 /* sa_algparam.cpp in Sources */,
 				A8D2636525834AE100E06EB8 /* sa_ec2n.cpp in Sources */,
@@ -1515,6 +1556,7 @@
 				A8D262AB25834AE000E06EB8 /* sa_simon128_simd.cpp in Sources */,
 				A8D2625D25834AE000E06EB8 /* sa_hrtimer.cpp in Sources */,
 				A8D2634625834AE100E06EB8 /* sa_cryptlib.cpp in Sources */,
+				FC2B27E726B78E2200CE3DDF /* SASMEncryptor.m in Sources */,
 				A8D2625B25834AE000E06EB8 /* sa_speck128_simd.cpp in Sources */,
 				A8D2637C25834AE100E06EB8 /* sa_fips140.cpp in Sources */,
 				A8D2621725834AE000E06EB8 /* sa_asn.cpp in Sources */,
@@ -1813,6 +1855,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SensorsAnalyticsEncrypt/SACryptopp",
+					"$(PROJECT_DIR)/SensorsAnalyticsEncrypt",
+					"$(PROJECT_DIR)/SensorsAnalyticsEncrypt/SM",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1846,6 +1894,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SensorsAnalyticsEncrypt/SACryptopp",
+					"$(PROJECT_DIR)/SensorsAnalyticsEncrypt",
+					"$(PROJECT_DIR)/SensorsAnalyticsEncrypt/SM",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = "SENSORS_ANALYTICS_ENABLE_CUSTOM_CRYPTOPP=1";
 				INFOPLIST_FILE = "$(SRCROOT)/SupportingFiles/SensorsAnalyticsEncrypt-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

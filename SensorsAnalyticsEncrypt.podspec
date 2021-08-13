@@ -1,14 +1,17 @@
 Pod::Spec.new do |s|
   s.name         = "SensorsAnalyticsEncrypt"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "The official iOS Encrypt of Sensors Analytics."
   s.homepage     = "http://www.sensorsdata.cn"
   s.source       = { :git => 'https://github.com/sensorsdata/sa-sdk-ios-encrypt.git', :tag => "v#{s.version}" } 
   s.license = { :type => "Boost Software License, Version 1.0" }
   s.author = { "Quan Wen" => "wenquan@sensorsdata.cn" }
   s.platform = :ios, "8.0"
-  s.source_files = "SensorsAnalyticsEncrypt/**/*.{h,mm,cpp}"
-  s.public_header_files = "SensorsAnalyticsEncrypt/ECC/SACryptoppECC.h"
+  s.source_files = "SensorsAnalyticsEncrypt/**/*.{h,m,mm,cpp}"
+  s.public_header_files = "SensorsAnalyticsEncrypt/ECC/SACryptoppECC.h", "SensorsAnalyticsEncrypt/SM/SASMEncryptor.h"
+  s.dependency "SensorsAnalyticsSDK", ">= 3.1.0"
+  s.vendored_frameworks = ['SensorsAnalyticsEncrypt/SM/openssl.framework']
+  s.static_framework = true
   s.libraries = "c++"
   s.pod_target_xcconfig = { 
     "GCC_PREPROCESSOR_DEFINITIONS" => "SENSORS_ANALYTICS_ENABLE_CUSTOM_CRYPTOPP=1", 
