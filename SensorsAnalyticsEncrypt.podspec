@@ -13,6 +13,9 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = ['SensorsAnalyticsEncrypt/SM/openssl.framework']
   s.static_framework = true
   s.libraries = "c++"
+  s.user_target_xcconfig = { 
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386 arm64'
+  }
   s.pod_target_xcconfig = { 
     "GCC_PREPROCESSOR_DEFINITIONS" => "SENSORS_ANALYTICS_ENABLE_CUSTOM_CRYPTOPP=1", 
     # -DCRYPTOPP_DISABLE_ASM=1 为了解决在模拟器上编译报错的问题
@@ -21,7 +24,8 @@ Pod::Spec.new do |s|
     "OTHER_CPLUSPLUSFLAGS[sdk=iphonesimulator*]" => "$(OTHER_CFLAGS) -DCRYPTOPP_DISABLE_ASM=1", 
     "CLANG_CXX_LANGUAGE_STANDARD" => "gnu++14",
     "CLANG_CXX_LIBRARY" => "libc++",
-    "GCC_WARN_INHIBIT_ALL_WARNINGS" => "YES"
+    "GCC_WARN_INHIBIT_ALL_WARNINGS" => "YES",
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386 arm64'
   }
 
 end
