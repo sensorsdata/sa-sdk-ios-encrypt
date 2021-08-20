@@ -393,10 +393,16 @@
 		A8D2638D25834AE100E06EB8 /* sa_config_asm.h in Headers */ = {isa = PBXBuildFile; fileRef = A8D2620825834AE000E06EB8 /* sa_config_asm.h */; };
 		A8D2638E25834AE100E06EB8 /* sa_safer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8D2620925834AE000E06EB8 /* sa_safer.cpp */; };
 		FC2B27E726B78E2200CE3DDF /* SASMEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2B27E326B78E2200CE3DDF /* SASMEncryptor.m */; };
-		FC2B27E926B78E2200CE3DDF /* SASMEncryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = FC2B27E526B78E2200CE3DDF /* SASMEncryptor.h */; };
+		FC2B27E926B78E2200CE3DDF /* SASMEncryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = FC2B27E526B78E2200CE3DDF /* SASMEncryptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC2B27ED26B7D39C00CE3DDF /* SASMEncryptHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2B27EB26B7D39C00CE3DDF /* SASMEncryptHelper.m */; };
 		FC2B27EE26B7D39C00CE3DDF /* SASMEncryptHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = FC2B27EC26B7D39C00CE3DDF /* SASMEncryptHelper.h */; };
 		FC2B27F026B7D3C500CE3DDF /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2B27EF26B7D3C500CE3DDF /* openssl.framework */; };
+		FC66E8A426C22F97000FEB91 /* SARSAOAEPEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FC66E89E26C22F97000FEB91 /* SARSAOAEPEncryptor.m */; };
+		FC66E8A626C22F97000FEB91 /* SARSAOAEPEncryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = FC66E8A026C22F97000FEB91 /* SARSAOAEPEncryptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCB4918E26C50405008CC591 /* SARSAHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = FCB4918A26C50405008CC591 /* SARSAHelper.h */; };
+		FCB4918F26C50405008CC591 /* SAAESHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB4918B26C50405008CC591 /* SAAESHelper.m */; };
+		FCB4919026C50405008CC591 /* SARSAHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB4918C26C50405008CC591 /* SARSAHelper.m */; };
+		FCB4919126C50405008CC591 /* SAAESHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = FCB4918D26C50405008CC591 /* SAAESHelper.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -804,6 +810,12 @@
 		FC2B27EB26B7D39C00CE3DDF /* SASMEncryptHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASMEncryptHelper.m; sourceTree = "<group>"; };
 		FC2B27EC26B7D39C00CE3DDF /* SASMEncryptHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASMEncryptHelper.h; sourceTree = "<group>"; };
 		FC2B27EF26B7D3C500CE3DDF /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = openssl.framework; sourceTree = "<group>"; };
+		FC66E89E26C22F97000FEB91 /* SARSAOAEPEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SARSAOAEPEncryptor.m; sourceTree = "<group>"; };
+		FC66E8A026C22F97000FEB91 /* SARSAOAEPEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SARSAOAEPEncryptor.h; sourceTree = "<group>"; };
+		FCB4918A26C50405008CC591 /* SARSAHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SARSAHelper.h; sourceTree = "<group>"; };
+		FCB4918B26C50405008CC591 /* SAAESHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAESHelper.m; sourceTree = "<group>"; };
+		FCB4918C26C50405008CC591 /* SARSAHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SARSAHelper.m; sourceTree = "<group>"; };
+		FCB4918D26C50405008CC591 /* SAAESHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAESHelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -846,6 +858,7 @@
 		A8D2607B2583491200E06EB8 /* SensorsAnalyticsEncrypt */ = {
 			isa = PBXGroup;
 			children = (
+				FC66E89B26C22F97000FEB91 /* OAEP */,
 				FC2B27E226B78E2200CE3DDF /* SM */,
 				A8031F422585F2D500166451 /* ECC */,
 				A8D2608525834ADE00E06EB8 /* SACryptopp */,
@@ -1255,6 +1268,19 @@
 			path = SM;
 			sourceTree = "<group>";
 		};
+		FC66E89B26C22F97000FEB91 /* OAEP */ = {
+			isa = PBXGroup;
+			children = (
+				FCB4918D26C50405008CC591 /* SAAESHelper.h */,
+				FCB4918B26C50405008CC591 /* SAAESHelper.m */,
+				FCB4918A26C50405008CC591 /* SARSAHelper.h */,
+				FCB4918C26C50405008CC591 /* SARSAHelper.m */,
+				FC66E8A026C22F97000FEB91 /* SARSAOAEPEncryptor.h */,
+				FC66E89E26C22F97000FEB91 /* SARSAOAEPEncryptor.m */,
+			);
+			path = OAEP;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1323,6 +1349,7 @@
 				A8D2620F25834AE000E06EB8 /* sa_pubkey.h in Headers */,
 				A8D2633125834AE100E06EB8 /* sa_cham.h in Headers */,
 				A8D2623D25834AE000E06EB8 /* sa_pssr.h in Headers */,
+				FCB4918E26C50405008CC591 /* SARSAHelper.h in Headers */,
 				A8D2626A25834AE000E06EB8 /* sa_misc.h in Headers */,
 				A8D2634725834AE100E06EB8 /* sa_hc256.h in Headers */,
 				A8D262AF25834AE000E06EB8 /* sa_donna_32.h in Headers */,
@@ -1341,6 +1368,7 @@
 				A8D262EA25834AE000E06EB8 /* sa_ossig.h in Headers */,
 				A8D2636725834AE100E06EB8 /* sa_sm3.h in Headers */,
 				A8D262D025834AE000E06EB8 /* sa_hashfwd.h in Headers */,
+				FC66E8A626C22F97000FEB91 /* SARSAOAEPEncryptor.h in Headers */,
 				A8D2622225834AE000E06EB8 /* sa_lea.h in Headers */,
 				A8D262BE25834AE000E06EB8 /* sa_mqv.h in Headers */,
 				A8D2637325834AE100E06EB8 /* sa_des.h in Headers */,
@@ -1412,6 +1440,7 @@
 				A8D2621A25834AE000E06EB8 /* sa_eccrypto.h in Headers */,
 				A8D262F625834AE000E06EB8 /* sa_dsa.h in Headers */,
 				A8D2622425834AE000E06EB8 /* sa_hmqv.h in Headers */,
+				FCB4919126C50405008CC591 /* SAAESHelper.h in Headers */,
 				A8D2623F25834AE000E06EB8 /* sa_default.h in Headers */,
 				A8D262A025834AE000E06EB8 /* sa_nr.h in Headers */,
 				A8D262EF25834AE000E06EB8 /* sa_strciphr.h in Headers */,
@@ -1591,6 +1620,7 @@
 				A8D2632E25834AE100E06EB8 /* sa_gf2n.cpp in Sources */,
 				A8D2629525834AE000E06EB8 /* sa_blowfish.cpp in Sources */,
 				A8D2628A25834AE000E06EB8 /* sa_chacha_avx.cpp in Sources */,
+				FCB4918F26C50405008CC591 /* SAAESHelper.m in Sources */,
 				A8D262D525834AE000E06EB8 /* sa_simon.cpp in Sources */,
 				A8D2629925834AE000E06EB8 /* sa_ariatab.cpp in Sources */,
 				A8D2629425834AE000E06EB8 /* sa_eax.cpp in Sources */,
@@ -1634,6 +1664,7 @@
 				A8D2621925834AE000E06EB8 /* sa_nbtheory.cpp in Sources */,
 				A8D262BF25834AE000E06EB8 /* sa_allocate.cpp in Sources */,
 				A8D2629625834AE000E06EB8 /* sa_ecp.cpp in Sources */,
+				FCB4919026C50405008CC591 /* SARSAHelper.m in Sources */,
 				A8D262C925834AE000E06EB8 /* sa_regtest3.cpp in Sources */,
 				A8D2630425834AE000E06EB8 /* sa_whrlpool.cpp in Sources */,
 				A8D2628225834AE000E06EB8 /* sa_validat8.cpp in Sources */,
@@ -1701,6 +1732,7 @@
 				A8D2630C25834AE000E06EB8 /* sa_fipstest.cpp in Sources */,
 				A8D2633825834AE100E06EB8 /* sa_ttmac.cpp in Sources */,
 				A8D2626C25834AE000E06EB8 /* sa_twofish.cpp in Sources */,
+				FC66E8A426C22F97000FEB91 /* SARSAOAEPEncryptor.m in Sources */,
 				A8D262F825834AE000E06EB8 /* sa_validat0.cpp in Sources */,
 				A8D262F925834AE000E06EB8 /* sa_base64.cpp in Sources */,
 				A8D2632025834AE100E06EB8 /* sa_validat7.cpp in Sources */,
