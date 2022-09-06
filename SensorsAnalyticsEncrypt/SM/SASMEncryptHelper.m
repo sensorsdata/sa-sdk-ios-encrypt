@@ -34,24 +34,24 @@
 #ifndef GMSM2_CIPHERTEXT_ST_1
 #define GMSM2_CIPHERTEXT_ST_1
 
-typedef struct SM2_Ciphertext_st_1 SM2_Ciphertext_1;
-DECLARE_ASN1_FUNCTIONS(SM2_Ciphertext_1)
+typedef struct SA_SM2_Ciphertext_st_1 SA_SM2_Ciphertext_1;
+DECLARE_ASN1_FUNCTIONS(SA_SM2_Ciphertext_1)
 
-struct SM2_Ciphertext_st_1 {
+struct SA_SM2_Ciphertext_st_1 {
     BIGNUM *C1x;
     BIGNUM *C1y;
     ASN1_OCTET_STRING *C3;
     ASN1_OCTET_STRING *C2;
 };
 
-ASN1_SEQUENCE(SM2_Ciphertext_1) = {
-    ASN1_SIMPLE(SM2_Ciphertext_1, C1x, BIGNUM),
-    ASN1_SIMPLE(SM2_Ciphertext_1, C1y, BIGNUM),
-    ASN1_SIMPLE(SM2_Ciphertext_1, C3, ASN1_OCTET_STRING),
-    ASN1_SIMPLE(SM2_Ciphertext_1, C2, ASN1_OCTET_STRING),
-} ASN1_SEQUENCE_END(SM2_Ciphertext_1)
+ASN1_SEQUENCE(SA_SM2_Ciphertext_1) = {
+    ASN1_SIMPLE(SA_SM2_Ciphertext_1, C1x, BIGNUM),
+    ASN1_SIMPLE(SA_SM2_Ciphertext_1, C1y, BIGNUM),
+    ASN1_SIMPLE(SA_SM2_Ciphertext_1, C3, ASN1_OCTET_STRING),
+    ASN1_SIMPLE(SA_SM2_Ciphertext_1, C2, ASN1_OCTET_STRING),
+} ASN1_SEQUENCE_END(SA_SM2_Ciphertext_1)
 
-IMPLEMENT_ASN1_FUNCTIONS(SM2_Ciphertext_1)
+IMPLEMENT_ASN1_FUNCTIONS(SA_SM2_Ciphertext_1)
 
 #endif /* GMSM2_CIPHERTEXT_ST_1 */
 
@@ -125,8 +125,8 @@ static int kDefaultEllipticCurveType = NID_sm2;
     const uint8_t *asn1_ctext = (uint8_t *)asn1Data.bytes;
 
     const EVP_MD *digest = EVP_sm3(); // 摘要算法
-    struct SM2_Ciphertext_st_1 *sm2_st = NULL;
-    sm2_st = d2i_SM2_Ciphertext_1(NULL, &asn1_ctext, asn1_ctext_len);
+    struct SA_SM2_Ciphertext_st_1 *sm2_st = NULL;
+    sm2_st = d2i_SA_SM2_Ciphertext_1(NULL, &asn1_ctext, asn1_ctext_len);
     // C1
     char *c1x_text = BN_bn2hex(sm2_st->C1x);
     char *c1y_text = BN_bn2hex(sm2_st->C1y);
@@ -146,7 +146,7 @@ static int kDefaultEllipticCurveType = NID_sm2;
 
     OPENSSL_free(c1x_text);
     OPENSSL_free(c1y_text);
-    SM2_Ciphertext_1_free(sm2_st);
+    SA_SM2_Ciphertext_1_free(sm2_st);
 
     if (!c1Data || !c3Data || !c2Data) {
         return nil;
