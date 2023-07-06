@@ -23,12 +23,25 @@
 #endif
 
 #import "SASMEncryptHelper.h"
+
+#if defined(SENSORS_ANALYTICS_ENABLE_SENSORS_OPENSSL)
+#import <sensors_openssl/sm2.h>
+#import <sensors_openssl/bn.h>
+#import <sensors_openssl/evp.h>
+#import <sensors_openssl/asn1t.h>
+#import <sensors_openssl/sm4.h>
+#import <sensors_openssl/modes.h>
+
+#else
+
 #import <openssl/sm2.h>
 #import <openssl/bn.h>
 #import <openssl/evp.h>
 #import <openssl/asn1t.h>
 #import <openssl/sm4.h>
 #import <openssl/modes.h>
+
+#endif
 
 //SM2 加密后密文为 ASN1 编码，此处定义 ASN1 编解码存储数据的结构体
 #ifndef GMSM2_CIPHERTEXT_ST_1

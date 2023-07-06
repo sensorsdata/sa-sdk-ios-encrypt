@@ -1,18 +1,16 @@
 Pod::Spec.new do |s|
   s.name         = "SensorsAnalyticsEncrypt"
-  s.version      = "0.0.5"
+  s.version      = "0.0.7"
   s.summary      = "The official iOS Encrypt of Sensors Analytics."
   s.homepage     = "http://www.sensorsdata.cn"
   s.source       = { :git => 'https://github.com/sensorsdata/sa-sdk-ios-encrypt.git', :tag => "v#{s.version}" } 
   s.license = { :type => "Boost Software License, Version 1.0" }
   s.author = { "Quan Wen" => "wenquan@sensorsdata.cn" }
-  s.platform = :ios, "8.0"
-  s.source_files = "SensorsAnalyticsEncrypt/**/*.{h,m,mm,cpp}"
-  s.public_header_files = "SensorsAnalyticsEncrypt/ECC/SACryptoppECC.h", "SensorsAnalyticsEncrypt/SM/SASMEncryptor.h", "SensorsAnalyticsEncrypt/OAEP/SARSAOAEPEncryptor.h"
+  s.platform = :ios, "9.0"
   s.dependency "SensorsAnalyticsSDK", ">= 3.1.1"
-  s.vendored_frameworks = ['SensorsAnalyticsEncrypt/SM/openssl.framework']
   s.static_framework = true
   s.libraries = "c++"
+  s.default_subspec = 'Core'
   s.user_target_xcconfig = { 
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386 arm64'
   }
@@ -27,5 +25,21 @@ Pod::Spec.new do |s|
     "GCC_WARN_INHIBIT_ALL_WARNINGS" => "YES",
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386 arm64'
   }
+
+  s.subspec 'Base' do |base|
+    base.source_files =  "SensorsAnalyticsEncrypt/ECC/*.{h,m,mm}", "SensorsAnalyticsEncrypt/OAEP/*.{h,m}", "SensorsAnalyticsEncrypt/SACryptopp/*.{h,m,mm,cpp}", "SensorsAnalyticsEncrypt/SM/*.{h,m}"
+    base.public_header_files = "SensorsAnalyticsEncrypt/ECC/SACryptoppECC.h", "SensorsAnalyticsEncrypt/SM/SASMEncryptor.h", "SensorsAnalyticsEncrypt/OAEP/SARSAOAEPEncryptor.h"
+  end
+
+  s.subspec 'Core' do |c|
+    c.dependency 'SensorsAnalyticsEncrypt/Base'
+    c.vendored_frameworks = ['SensorsAnalyticsEncrypt/SM/openssl.framework']
+  end
+
+  s.subspec 'SAOpenSSL' do |sa|
+    sa.dependency 'SensorsAnalyticsEncrypt/Base'
+    sa.vendored_frameworks = ['SensorsAnalyticsEncrypt/SM/sensors_openssl.framework']
+    sa.pod_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'SENSORS_ANALYTICS_ENABLE_SENSORS_OPENSSL=1'}
+  end
 
 end
