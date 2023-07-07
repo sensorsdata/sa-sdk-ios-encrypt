@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.dependency "SensorsAnalyticsSDK", ">= 3.1.1"
   s.static_framework = true
   s.libraries = "c++"
-  s.default_subspec = 'Core'
+  s.default_subspec = 'Default'
   s.user_target_xcconfig = { 
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386 arm64'
   }
@@ -27,19 +27,23 @@ Pod::Spec.new do |s|
   }
 
   s.subspec 'Base' do |base|
-    base.source_files =  "SensorsAnalyticsEncrypt/ECC/*.{h,m,mm}", "SensorsAnalyticsEncrypt/OAEP/*.{h,m}", "SensorsAnalyticsEncrypt/SACryptopp/*.{h,m,mm,cpp}", "SensorsAnalyticsEncrypt/SM/*.{h,m}"
-    base.public_header_files = "SensorsAnalyticsEncrypt/ECC/SACryptoppECC.h", "SensorsAnalyticsEncrypt/SM/SASMEncryptor.h", "SensorsAnalyticsEncrypt/OAEP/SARSAOAEPEncryptor.h"
+    base.source_files =  "SensorsAnalyticsEncrypt/ECC/*.{h,m,mm}", "SensorsAnalyticsEncrypt/OAEP/*.{h,m}", "SensorsAnalyticsEncrypt/SACryptopp/*.{h,m,mm,cpp}"
+    base.public_header_files = "SensorsAnalyticsEncrypt/ECC/SACryptoppECC.h", "SensorsAnalyticsEncrypt/OAEP/SARSAOAEPEncryptor.h"
   end
 
-  s.subspec 'Core' do |c|
-    c.dependency 'SensorsAnalyticsEncrypt/Base'
-    c.vendored_frameworks = ['SensorsAnalyticsEncrypt/SM/openssl.framework']
+  s.subspec 'Default' do |d|
+    d.dependency 'SensorsAnalyticsEncrypt/Base'
+    d.source_files =  "SensorsAnalyticsEncrypt/SM/*.{h,m}"
+    d.public_header_files = "SensorsAnalyticsEncrypt/SM/SASMEncryptor.h"
+    d.vendored_frameworks = ['SensorsAnalyticsEncrypt/SM/openssl.framework']
   end
 
   s.subspec 'SAOpenSSL' do |sa|
     sa.dependency 'SensorsAnalyticsEncrypt/Base'
+    sa.source_files =  "SensorsAnalyticsEncrypt/SM/*.{h,m}"
+    sa.public_header_files = "SensorsAnalyticsEncrypt/SM/SASMEncryptor.h"
     sa.vendored_frameworks = ['SensorsAnalyticsEncrypt/SM/sensors_openssl.framework']
-    sa.pod_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'SENSORS_ANALYTICS_ENABLE_SENSORS_OPENSSL=1'}
+    sa.pod_target_xcconfig = {'GCC_PREPROCESSOR_DEFINITIONS' => 'SENSORS_ANALYTICS_ENABLE_SENSORS_OPENSSL=1'}
   end
 
 end
