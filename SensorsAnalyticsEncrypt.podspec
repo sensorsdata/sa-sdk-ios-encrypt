@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SensorsAnalyticsEncrypt"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "The official iOS Encrypt of Sensors Analytics."
   s.homepage     = "http://www.sensorsdata.cn"
   s.source       = { :git => 'https://github.com/sensorsdata/sa-sdk-ios-encrypt.git', :tag => "v#{s.version}" } 
