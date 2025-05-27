@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4DAD749C2A4AE20000FFAC10 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAD749B2A4AE20000FFAC10 /* openssl.framework */; };
+		4D77A5F42DE596BD00D3F9F3 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D77A5F32DE596BD00D3F9F3 /* OpenSSL.xcframework */; };
 		A8031F452585F2D500166451 /* SACryptoppECC.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8031F432585F2D500166451 /* SACryptoppECC.mm */; };
 		A8031F462585F2D500166451 /* SACryptoppECC.h in Headers */ = {isa = PBXBuildFile; fileRef = A8031F442585F2D500166451 /* SACryptoppECC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A8D2620B25834AE000E06EB8 /* sa_panama.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8D2608625834ADE00E06EB8 /* sa_panama.cpp */; };
@@ -406,7 +406,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4DAD749B2A4AE20000FFAC10 /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = openssl.framework; sourceTree = "<group>"; };
+		4D77A5F32DE596BD00D3F9F3 /* OpenSSL.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:75FYWDWHL5:Sensors Data Co., Ltd"; lastKnownFileType = wrapper.xcframework; path = OpenSSL.xcframework; sourceTree = "<group>"; };
 		A8031F432585F2D500166451 /* SACryptoppECC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SACryptoppECC.mm; sourceTree = "<group>"; };
 		A8031F442585F2D500166451 /* SACryptoppECC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACryptoppECC.h; sourceTree = "<group>"; };
 		A8D260792583491200E06EB8 /* SensorsAnalyticsEncrypt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SensorsAnalyticsEncrypt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -810,7 +810,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DAD749C2A4AE20000FFAC10 /* openssl.framework in Frameworks */,
+				4D77A5F42DE596BD00D3F9F3 /* OpenSSL.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1246,7 +1246,7 @@
 		FC2B27E226B78E2200CE3DDF /* SM */ = {
 			isa = PBXGroup;
 			children = (
-				4DAD749B2A4AE20000FFAC10 /* openssl.framework */,
+				4D77A5F32DE596BD00D3F9F3 /* OpenSSL.xcframework */,
 				FC2B27EC26B7D39C00CE3DDF /* SASMEncryptHelper.h */,
 				FC2B27EB26B7D39C00CE3DDF /* SASMEncryptHelper.m */,
 				FC2B27E526B78E2200CE3DDF /* SASMEncryptor.h */,
@@ -1867,9 +1867,10 @@
 		A8D260822583491200E06EB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 75FYWDWHL5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1909,9 +1910,10 @@
 		A8D260832583491200E06EB8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 75FYWDWHL5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

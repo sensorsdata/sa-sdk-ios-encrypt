@@ -25,21 +25,21 @@
 #import "SASMEncryptHelper.h"
 
 #if defined(SENSORS_ANALYTICS_ENABLE_SENSORS_OPENSSL)
-#import <sensors_openssl/sm2.h>
-#import <sensors_openssl/bn.h>
-#import <sensors_openssl/evp.h>
-#import <sensors_openssl/asn1t.h>
-#import <sensors_openssl/sm4.h>
-#import <sensors_openssl/modes.h>
+#import <Sensors_OpenSSL/sm2.h>
+#import <Sensors_OpenSSL/bn.h>
+#import <Sensors_OpenSSL/evp.h>
+#import <Sensors_OpenSSL/asn1t.h>
+#import <Sensors_OpenSSL/sm4.h>
+#import <Sensors_OpenSSL/modes.h>
 
 #else
 
-#import <openssl/sm2.h>
-#import <openssl/bn.h>
-#import <openssl/evp.h>
-#import <openssl/asn1t.h>
-#import <openssl/sm4.h>
-#import <openssl/modes.h>
+#import <OpenSSL/sm2.h>
+#import <OpenSSL/bn.h>
+#import <OpenSSL/evp.h>
+#import <OpenSSL/asn1t.h>
+#import <OpenSSL/sm4.h>
+#import <OpenSSL/modes.h>
 
 #endif
 

@@ -265,13 +265,7 @@ inline bool IsAppleMachineARM32()
 
 inline bool IsAppleMachineARMv8()
 {
-	static unsigned int arch;
-	if (arch == 0)
-	{
-		unsigned int unused;
-		GetAppleMachineInfo(unused, unused, arch);
-	}
-	return arch == AppleMachineInfo::ARMV8;
+	return true;
 }
 
 #endif  // __APPLE__
